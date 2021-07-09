@@ -111,6 +111,157 @@ section {
   margin: 0;
 }
 
+.news-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 180px;
+}
+.news h2 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+.news li {
+  padding: 20px 0;
+  margin: 0 20px;
+  border-bottom: 1px dotted #dedede;
+}
+.news li a {
+  color: #333;
+  display: flex;
+}
+.news li time {
+  font-size: 0.75em;
+  color: #949494;
+  margin-right: 80px;
+}
+
+.recruit {
+  position: relative;
+}
+.recruit-img img {
+  width: 80%;
+  height: 400px;
+  margin-right: 20%;  
+}
+.recruit-img::after {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  top:0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+.recruit h2 a {
+  position: absolute;
+  top: 45%;
+  right: 52%;
+  width: 250px;
+  height: 60px;
+  background-color: rgba(255,255,255,0.6);
+  line-height: 60px;
+  text-align: center;
+}
+.bg2 {
+  position: absolute;
+  background: #e8e7e7;
+  height: 400px;
+  width: 45%;
+  top: -20%;
+  right: 0;
+  z-index: -1;
+}
+footer .content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+.address {
+  margin-left: 50px;
+}
+.address p {
+  line-height: 1.8;
+}
+footer ul {
+  display: flex;
+}
+footer ul li {
+  margin-right: 50px;
+}
+.copyright p {
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 0;
+  line-height: 100px;
+  color: #333;
+  background-color: #e8e7e7;
+}
+
+
+.sub-visual {
+  margin-bottom: 120px;
+  background-image: url(../images/1000x500-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.sub-visual h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 200px;
+  font-weight: normal;
+}
+
+.company-greeting {
+  margin-bottom: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+}
+.left {
+  grid-area: 1/ 1/ 2/ 2;
+}
+.right {
+  grid-area: 1/ 2/ 2/ 3;
+  padding-top: 40px;
+}
+.company-greeting h2 {
+  text-align: center;
+}
+
+.company-profile {
+  margin-bottom: 120px;
+}
+table .company {
+  width: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #e8e7e7;
+}
+table .company th {
+  background-color: #e8e7e7;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 30%;
+  line-height: 1.5em;
+  text-align: left;
+  border-bottom: 1px solid #fff;
+}
+table.company td {
+  text-align: left;
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 1px solid #e8e7e7;
+  line-height: 1.5;
+}
+
+
+
+
+
+
 
 @media screen and (max-width: 950px) {
   section {
@@ -171,8 +322,6 @@ section {
     bottom: 0;
   }
 
-
-
   .greeting h2 {
     margin-bottom: 10px;
   }
@@ -183,7 +332,40 @@ section {
     font-size: 12px;
   }
 
+  .work::before {
+    height: 200px;
+  }
+  .work h2 {
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .news-content {
+    margin-bottom: 100px;
+  }
+  .news li a {
+    display: flex;
+    flex-direction: column;
+  }
+  .news li p {
+    font-size: 90%;
+  }
+
+  .recruit-img img {
+    height: 250px;  
+  }
+  .bg2 {
+    height: 350px;
+    top: -25%;
+  }
+
+  footer .content-wrapper {
+    justify-content: space-around;
+  }
+  footer ul {
+    flex-direction: column;
+  }
+  .sub-visual h1 {
+    line-height: 100px;
+  }
 }
-
-
-
