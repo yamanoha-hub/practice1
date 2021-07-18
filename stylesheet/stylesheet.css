@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+/* ベース */
 body {
   font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
   font-weight: 500;
@@ -19,6 +20,7 @@ section { /* クラス名当てる*/
   margin: 0 auto;
 }
 
+/* ヘッダー */
 .header-nav h1 {
   margin-left: 50px;
 }
@@ -36,6 +38,24 @@ section { /* クラス名当てる*/
 .header nav ul li {
   margin-right: 50px;
 }
+
+#page-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: #777;
+  text-align: center;
+  cursor: pointer;
+  z-index: 5;
+}
+#page-top i {
+  line-height: 50px;
+}
+
+
+/* メインビジュアル */
 .main-visual {
   position: relative;
   height: 600px;
@@ -63,6 +83,7 @@ section { /* クラス名当てる*/
   z-index: -1;
 }
 
+/* 記事 */
 .greeting h2 {
   margin-bottom: 50px;
   text-align: center;
@@ -82,6 +103,8 @@ section { /* クラス名当てる*/
   margin-right: 20px;
 }
 
+
+/* 事業内容 */
 .work {
   width: 100%;
   position: relative;
@@ -111,6 +134,7 @@ section { /* クラス名当てる*/
   margin: 0;
 }
 
+/* ニュース・トピック */
 .news-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -135,6 +159,7 @@ section { /* クラス名当てる*/
   margin-right: 80px;
 }
 
+/* 採用情報 */
 .recruit {
   position: relative;
 }
@@ -171,13 +196,19 @@ section { /* クラス名当てる*/
   right: 0;
   z-index: -1;
 }
+
+/* フッター */
 footer .content-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 50px 0;
 }
-.address p {
+
+.footer-address {
+  margin-left: 50px;
+}
+.footer-address p {
   line-height: 1.8;
 }
 footer ul {
@@ -185,6 +216,15 @@ footer ul {
 }
 footer ul li {
   margin-right: 50px;
+}
+
+/* 会社概要ページ */
+.sub-visual {
+  margin-bottom: 120px;
+  background-image: url(../images/1000x500-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .copyright p {
   text-align: center;
@@ -194,14 +234,6 @@ footer ul li {
   color: #333;
   background-color: #e8e7e7;
 }
-
-.sub-visual {
-  margin-bottom: 120px;
-  background-image: url(../images/1000x500-1.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
 .sub-visual h1 {
   text-align: center;
   font-size: 1.5rem;
@@ -210,33 +242,28 @@ footer ul li {
   font-weight: normal;
 }
 
+/* 採用情報ページ */
 .company-greeting {
-  margin-bottom: 120px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 20px;
-}
-.left {
-  grid-area: 1/ 1/ 2/ 2;
+  margin-bottom: 100px;
+  display: flex;
 }
 .right {
-  grid-area: 1/ 2/ 2/ 3;
-  padding-top: 40px;
+  width: 70%;
+  padding-top: 50px;
+  margin: 20px;
 }
 .company-greeting h2 {
   text-align: center;
 }
-
 .company-profile {
   margin-bottom: 120px;
 }
-table .company {
+.company {
   width: 100%;
   margin: 0 auto;
   border-top: 1px solid #e8e7e7;
 }
-table .company th {
+.company th {
   background-color: #e8e7e7;
   box-sizing: border-box;
   padding: 20px;
@@ -245,18 +272,16 @@ table .company th {
   text-align: left;
   border-bottom: 1px solid #fff;
 }
-table.company td {
+.company td {
   text-align: left;
   box-sizing: border-box;
   padding: 20px;
   border-bottom: 1px solid #e8e7e7;
-  line-height: 1.5;
+  line-height: 1.5em;
 }
-
 .company-map {
   margin-bottom: 0px;
 }
-
 .work-description01 {
   margin-bottom: 240px;
 }
@@ -278,8 +303,8 @@ table.company td {
   color: #333;
   padding: 80px;
   z-index: 2;
+  box-shadow: 0px 3px 10px 5px rgb(172, 172, 172);
 }
-
 .work-description02 {
   margin-bottom: 240px;
 }
@@ -305,9 +330,8 @@ table.company td {
   color: #333;
   padding: 80px;
   z-index: 2;
+  box-shadow: 0px 3px 10px 5px rgb(172, 172, 172);
 }
-
-
 .work-description03 {
   margin-bottom: 240px;
 }
@@ -329,8 +353,11 @@ table.company td {
   color: #333;
   padding: 80px;
   z-index: 2;
+  box-shadow: 0px 3px 10px 5px rgb(172, 172, 172);
 }
 
+
+/* 採用情報ページ */
 .recruit-point h2 {
   text-align: center;
   margin-bottom: 80px;
@@ -361,6 +388,7 @@ table.content td {
   line-height: 1.5em;
 }
 
+/* お問い合わせページ */
 .form {
   margin-bottom: 80px;
 }
@@ -473,18 +501,88 @@ table.content td {
   transition: .3s ease all;
 }
 
-
-
-
+@media screen and (max-width: 1160px) {
+  .form .content-wrapper {
+    margin: 20px;
+  }
+  .form dl {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+  .form dt {
+    width: 200px;
+    padding: 0 0 10px 0px;
+    line-height: 1em;
+    font-size: 18px;
+  }
+  .form dd {
+    width: 100%;
+  }
+  .form dd input,
+  .form dd select {
+    line-height: 40px;
+    height: 40px;	
+    padding: 0px 10px;
+  }
+  .form dd textarea {
+    height: 140px;
+    line-height: 1.5em;
+    padding: 0px;
+  }
+  .form dl.name dd,
+  .form dl.furigana dd  {
+    padding-left: 0px;
+  }
+  .form dl.name dd input:first-of-type,
+  .form dl.furigana dd input:first-of-type {
+    margin: 0 20px 0 0;
+  }
+  .form dl.tel dd input,
+  .form dl.zip dd input {
+    width: 100px;
+  }
+  .form dl.tel dd span,
+  .form dl.zip dd span {
+    margin: 0 10px;
+  }
+  .form .form-button {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto 0 auto;
+  }
+  .form .form-button input {
+    display: block;
+    width: 250px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background-color: #353535;
+    border: 1px solid #353535;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: .3s ease all;
+  }
+  .form .form-button input:hover {
+    background-color: transparent;
+    color: #444;
+    transition: .3s ease all;
+  }
+}
 
 @media screen and (max-width: 950px) {
+  .form dl.name dd,
+  .form dl.furigana dd  {
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+  }
   section {
     margin-bottom: 120px;
   }
   .header nav ul {
     display: none;
   }
-
   .main-visual {
     height: 300px;
   }
@@ -499,7 +597,9 @@ table.content td {
     height: 500px;
     top: -35%;
   }
-
+  .header-nav nav {
+    display: none;
+  }
   .hamburger {
     display: block;
     position: absolute;
@@ -512,7 +612,8 @@ table.content td {
   }
   .nav-btn,
   .nav-btn span {
-  display: inline-block;
+    margin-right: 50px;
+    display: inline-block;
   }
   .nav-btn {
     position: relative;
@@ -565,6 +666,7 @@ table.content td {
     font-size: 90%;
   }
 
+
   .recruit-img img {
     height: 250px;  
   }
@@ -581,5 +683,14 @@ table.content td {
   }
   .sub-visual h1 {
     line-height: 100px;
+  }
+  .right {
+    font-size: 12px;
+    padding-top: 10px;
+    margin-left: 0;
+  }
+  .left figure {
+    margin: 10px;
+    width: 90%;
   }
 }
