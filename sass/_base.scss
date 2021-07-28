@@ -1,0 +1,41 @@
+
+/* ベース */
+body {
+  font-family: "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
+  font-weight: 500;
+  color: #333;
+  line-height: 2.0;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+  object-fit: cover;
+}
+
+section {
+  margin-bottom: 120px;
+}
+
+.content-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* サブ ベース */
+
+.sub-visual {
+  margin-bottom: 50px;
+  background-image: url(../images/1000x500-1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fff;
+    line-height: 200px;
+    font-weight: normal;
+  }
+}
