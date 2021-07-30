@@ -1,9 +1,10 @@
 @charset "UTF-8";
-@import "_base"; 
-@import "_mixin";
+@import "_reset";  //リセット
+@import "_base";  //全体の設定
+@import "_parts";  //パーツ
+@import "_mixin";  //mixin定義
 
 /* ヘッダー */
-
 .header-nav {
   @include flex;
   height: 100px;
@@ -16,25 +17,30 @@
     margin-left: 50px;
   }
 }
-
-#page-top {
-  position: fixed;
-  right: 25px;
-  bottom: 25px;
-  width: 50px;
-  height: 50px;
-  background-color: #999;
-  text-align: center;
-  cursor: pointer;
-  z-index: 5;
-
-  i {
-    line-height: 50px;
+@media screen and (max-width: 950px) {
+  .hover-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 60%;
+    background-color: #fff;
+    z-index: 5;
+  }
+  .header-nav nav {
+    display: none;
+  }
+  .header-nav nav ul {
+    flex-direction: column;
+    li {
+      margin: 20px 0;
+      font-size: 20px;
+    }
   }
 }
 
 /* メインビジュアル */
-
 .main-visual {
   position: relative;
   height: 600px;
@@ -53,20 +59,33 @@
     font-size: 3rem;
     padding: 1rem;
   }
+  .bg1 {
+    background: #e8e7e7;
+    height: 700px;
+    width: 40%;
+    position: absolute;
+    top: -18%;
+    left: 0;
+    z-index: -1;
+  }
+  @media screen and (max-width: 950px) {
+    height: 300px;
+    img {
+      height: 300px;
+    }
+    h2 {
+      left: 10%;
+      font-size: 2rem;
+    }
+    .bg1 {
+      height: 500px;
+      top: -35%;
+    }
+  }
 }
 
-.bg1 {
-  background: #e8e7e7;
-  height: 700px;
-  width: 40%;
-  position: absolute;
-  top: -18%;
-  left: 0;
-  z-index: -1;
-}
 
 /* 記事 */
-
 .greeting h2 {
   margin-bottom: 50px;
   text-align: center;
@@ -85,13 +104,24 @@
   width: 40%;
   margin-right: 20px;
 }
+@media screen and (max-width: 950px) {
+  .greeting h2 {
+    margin-bottom: 10px;
+  }
+  .content {
+    margin-right: 20px;
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
 
 /* 事業内容 */
-
 .work {
   width: 100%;
   position: relative;
-
   &::before {
     content: '';
     background: #e8e7e7;
@@ -100,7 +130,6 @@
     height: 300px;
     z-index: -1;
   }
-
   h2 {
     padding-top: 60px;
     margin-bottom: 60px;
@@ -118,13 +147,24 @@
       }
     }
   }
+  @media screen and (max-width: 950px) {
+    &::before {
+      height: 200px;
+    }
+    h2 {
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
 }
 
 /* ニュース・トピック */
-
 .news-content {
   max-width: 1200px;
   margin-bottom: 180px;
+  @media screen and (max-width: 950px) {
+    margin-bottom: 100px;
+  }
 }
 
 .news {
@@ -132,7 +172,6 @@
     margin-bottom: 50px;
     text-align: center;
   }
-
   li {
     padding: 20px 0;
     margin: 0 20px;
@@ -149,19 +188,33 @@
       margin-right: 80px;
     }
   }
+  @media screen and (max-width: 950px) {
+    h2 {
+      margin-bottom: 0;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+    }
+    p {
+      font-size: 90%;
+    }
+  }
 }
 
-/* 採用情報 */
 
+/* 採用情報 */
 .recruit {
   position: relative;
 }
-
 .recruit-img {
   img {
     width: 80%;
     height: 400px;
     margin-right: 20%;
+    @media screen and (max-width: 950px) {
+      height: 250px;
+    }
   }
 
   &::after {
@@ -194,31 +247,38 @@
   top: -20%;
   right: 0;
   z-index: -1;
+  @media screen and (max-width: 950px) {
+    height: 350px;
+    top: -25%;
+  }
 }
 
-/* フッター */
 
+/* フッター */
 footer .content-wrapper {
   @include flex;
   padding: 50px 0;
-}
-
-.footer-address {
-  margin-left: 50px;
-
-  p {
-    line-height: 1.8;
+  .footer-address {
+    margin-left: 50px;
+  
+    p {
+      line-height: 1.8;
+    }
+  }
+  ul {
+    display: flex;
+  
+    li {
+      margin-right: 50px;
+    }
+  }
+  @media screen and (max-width: 950px) {
+    justify-content: space-around;  
+    ul {
+      flex-direction: column;
+    }
   }
 }
-
-footer ul {
-  display: flex;
-
-  li {
-    margin-right: 50px;
-  }
-}
-
 .copyright p {
   text-align: center;
   font-size: 0.75rem;
@@ -227,8 +287,8 @@ footer ul {
   background-color: #e8e7e7;
 }
 
-/* 会社概要ページ */
 
+/* 会社概要ページ */
 .company-greeting {
   display: flex;
   margin-bottom: 50px;
@@ -236,11 +296,21 @@ footer ul {
   .right {
     width: 70%;
     padding-top: 50px;
-    margin: 20px;
+    margin: 20px; 
+    h2 {
+      text-align: center;
+    }
   }
-  
-  h2 {
-    text-align: center;
+  @media screen and (max-width: 950px) {
+    .left figure {
+      margin: 10px;
+      width: 90%;
+    }
+    .right {
+      font-size: 12px;
+      padding-top: 10px;
+      margin-left: 0;
+    }
   }
 }
 
@@ -256,20 +326,20 @@ footer ul {
   margin-bottom: 0px;
 }
 
+
+// 事業内容
 .work-description01,
+.work-description02,
 .work-description03 {
   margin-bottom: 240px;
-
   dl {
     width: 100%;
     position: relative;
-
     dt img {
       width: 60%;
       height: 500px;
       object-fit: cover;
     }
-
     dd {
       width: 40%;
       position: absolute;
@@ -285,59 +355,34 @@ footer ul {
 }
 
 .work-description02 {
-  margin-bottom: 240px;
-
-  dl {
-    width: 100%;
-    position: relative;
-  }
-
   dt {
-    img {
-      width: 60%;
-      height: 500px;
-      object-fit: cover;
-    }
-
     display: flex;
     justify-content: flex-end;
   }
 
   dd {
-    width: 40%;
-    position: absolute;
-    top: 40%;
-    left: 10%;
-    background-color: #fff;
-    color: #333;
-    padding: 80px;
-    z-index: 2;
-    box-shadow: 0px 3px 10px 5px rgb(172, 172, 172);
+    // left: 10%;
+    right: 10%;
   }
 }
 
 
-
 /* 採用情報ページ */
-
-section.recruit-point {
-  margin-bottom: 50px;
+.recruit-point {
+  margin-bottom: 50px;  
+  h2 {
+    text-align: center;
+  }
 }
-
-.recruit-point h2 {
-  text-align: center;
-}
-
 .recruit-table {
   margin-bottom: 40px;
+  .content {
+    @include table;
+  }
 }
 
-table.content {
-  @include table;
-}
 
 /* お問い合わせページ */
-
 .form {
   margin-bottom: 80px;
 
@@ -349,13 +394,13 @@ table.content {
     &:first-of-type {
       border-top: 1px dotted #676767;
     }
-  }
-
-  dt {
-    width: 300px;
-    box-sizing: border-box;
-    padding: 20px 0 20px 10px;
-    line-height: 1em;
+    
+    dt {
+      width: 300px;
+      box-sizing: border-box;
+      padding: 20px 0 20px 10px;
+      line-height: 1em;
+    }
   }
 
   dd {
@@ -384,11 +429,13 @@ table.content {
   }
 
   dl {
-    &.name dd span, &.furigana dd span {
+    &.name dd span,
+    &.furigana dd span {
       margin: 0 20px 0 0;
     }
 
-    &.name dd input, &.furigana dd input {
+    &.name dd input,
+    &.furigana dd input {
       width: 350px;
     }
 
@@ -400,15 +447,20 @@ table.content {
       margin: 0 30px 0 0;
     }
 
-    &.mail dd input, &.address dd input, &.multi-text dd textarea {
+    &.mail dd input,
+    &.address dd input,
+    &.multi-text dd textarea {
       width: calc(100% - 20px);
     }
 
-    &.tel dd input, &.zip dd input, &.pref dd select {
+    &.tel dd input,
+    &.zip dd input,
+    &.pref dd select {
       width: 200px;
     }
 
-    &.tel dd span, &.zip dd span {
+    &.tel dd span,
+    &.zip dd span {
       margin: 0 20px;
     }
   }
@@ -437,255 +489,58 @@ table.content {
       }
     }
   }
-}
-
-@media screen and (max-width: 1160px) {
-  .form {
+  @media screen and (max-width: 1160px) {
     .content-wrapper {
       margin: 20px;
     }
-
     dl {
-      display: flex;
       flex-direction: column;
       padding: 20px 30px;
-    }
-
-    dt {
-      width: 200px;
-      padding: 0 0 10px 0px;
-      line-height: 1em;
-      font-size: 18px;
-    }
-
-    dd {
-      width: 100%;
-
-      input, select {
-        line-height: 40px;
-        height: 40px;
-        padding: 0px 10px;
-      }
-
-      textarea {
-        height: 140px;
-        line-height: 1.5em;
-        padding: 0px;
-      }
-    }
-
-    dl {
       &.name dd, &.furigana dd {
         padding-left: 0px;
       }
 
-      &.name dd input:first-of-type, &.furigana dd input:first-of-type {
+      &.name dd input:first-of-type,
+      &.furigana dd input:first-of-type {
         margin: 0 20px 0 0;
       }
 
-      &.tel dd input, &.zip dd input {
+      &.tel dd input,
+      &.zip dd input {
         width: 100px;
       }
 
-      &.tel dd span, &.zip dd span {
+      &.tel dd span,
+      &.zip dd span {
         margin: 0 10px;
       }
+      &.name dd,
+      &.furigana dd {
+        padding-left: 0px;
+        display: flex;
+        flex-direction: column;
+      }
     }
-
+    dt {
+      width: 200px;
+      padding: 0 0 10px 0px;
+      font-size: 18px;
+    }
+    dd {
+      width: 100%;
+    }
+    input, select {
+      padding: 0px 10px;
+    }
+    textarea {
+      height: 140px;
+      line-height: 1.5em;
+      padding: 0px;
+    }
     .form-button {
       display: flex;
       justify-content: center;
       margin: 50px auto 0 auto;
-
-      input {
-        display: block;
-        width: 250px;
-        line-height: 50px;
-        text-align: center;
-        color: #fff;
-        background-color: #353535;
-        border: 1px solid #353535;
-        margin: 0 15px;
-        cursor: pointer;
-        transition: .3s ease all;
-
-        &:hover {
-          background-color: transparent;
-          color: #444;
-          transition: .3s ease all;
-        }
-      }
     }
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .form dl {
-    &.name dd, &.furigana dd {
-      padding-left: 0px;
-      display: flex;
-      flex-direction: column;
-    }
-  }
-
-  section {
-    margin-bottom: 120px;
-  }
-
-  .hover-menu {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 30%;
-    height: 60%;
-    background-color: #fff;
-    z-index: 5;
-  }
-
-  .header-nav nav {
-    display: none;
-  }
-  .header-nav nav ul {
-    flex-direction: column;
-
-    li {
-      margin: 20px 0;
-      font-size: 20px;
-    }
-  }
-
-  /* メインビジュアル */
-
-  .main-visual {
-    height: 300px;
-
-    img {
-      height: 300px;
-    }
-
-    h2 {
-      left: 10%;
-      font-size: 2rem;
-    }
-  }
-
-  .bg1 {
-    height: 500px;
-    top: -35%;
-  }
-
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 26px;
-    cursor: pointer;
-  }
-
-  .nav-btn {
-    margin-right: 50px;
-    display: inline-block;
-
-    span {
-      margin-right: 50px;
-      display: inline-block;
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background-color: #444;
-
-      &:nth-of-type(1) {
-        top: 0;
-      }
-
-      &:nth-of-type(2) {
-        top: 11px;
-      }
-
-      &:nth-of-type(3) {
-        bottom: 0;
-      }
-    }
-
-    position: relative;
-    width: 30px;
-    height: 26px;
-  }
-
-  .greeting h2 {
-    margin-bottom: 10px;
-  }
-
-  .content {
-    margin-right: 20px;
-
-    p {
-      font-size: 12px;
-    }
-  }
-
-  .work {
-    &::before {
-      height: 200px;
-    }
-
-    h2 {
-      padding-top: 30px;
-      margin-bottom: 30px;
-    }
-  }
-
-  .news-content {
-    margin-bottom: 100px;
-  }
-
-  .news li {
-    a {
-      display: flex;
-      flex-direction: column;
-    }
-
-    p {
-      font-size: 90%;
-    }
-  }
-
-  .recruit-img img {
-    height: 250px;
-  }
-
-  .bg2 {
-    height: 350px;
-    top: -25%;
-  }
-
-  footer {
-    .content-wrapper {
-      justify-content: space-around;
-    }
-
-    ul {
-      flex-direction: column;
-    }
-  }
-
-  .sub-visual h1 {
-    line-height: 100px;
-  }
-
-  .right {
-    font-size: 12px;
-    padding-top: 10px;
-    margin-left: 0;
-  }
-
-  .left figure {
-    margin: 10px;
-    width: 90%;
   }
 }

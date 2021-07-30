@@ -555,9 +555,7 @@ table.content td {
     display: flex;
     flex-direction: column;
   }
-  section {
-    margin-bottom: 120px;
-  }
+
   .hover-menu {
     display: none;
     position: fixed;
@@ -672,6 +670,7 @@ table.content td {
   footer ul {
     flex-direction: column;
   }
+  
   .sub-visual h1 {
     line-height: 100px;
   }
