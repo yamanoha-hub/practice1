@@ -161,6 +161,16 @@ section {
   position: relative;
   height: 600px;
 }
+.main-visual::before {
+  content: "";
+  background: #e8e7e7;
+  height: 700px;
+  width: 40%;
+  position: absolute;
+  top: -18%;
+  left: 0;
+  z-index: -1;
+}
 .main-visual img {
   width: 70%;
   height: 500px;
@@ -173,15 +183,6 @@ section {
   background: rgba(255, 255, 255, 0.6);
   font-size: 3rem;
   padding: 1rem;
-}
-.main-visual .bg1 {
-  background: #e8e7e7;
-  height: 700px;
-  width: 40%;
-  position: absolute;
-  top: -18%;
-  left: 0;
-  z-index: -1;
 }
 
 /* 記事 */
@@ -278,6 +279,16 @@ section {
 .recruit {
   position: relative;
 }
+.recruit::before {
+  content: "";
+  background: #e8e7e7;
+  height: 400px;
+  width: 45%;
+  position: absolute;
+  top: -20%;
+  right: 0;
+  z-index: -1;
+}
 
 .recruit-img img {
   width: 80%;
@@ -303,16 +314,6 @@ section {
   background-color: rgba(255, 255, 255, 0.6);
   line-height: 60px;
   text-align: center;
-}
-
-.bg2 {
-  position: absolute;
-  background: #e8e7e7;
-  height: 400px;
-  width: 45%;
-  top: -20%;
-  right: 0;
-  z-index: -1;
 }
 
 /* フッター */
@@ -399,18 +400,15 @@ footer .content-wrapper ul li {
 }
 
 .work-description01,
-.work-description02,
 .work-description03 {
   margin-bottom: 240px;
 }
 .work-description01 dl,
-.work-description02 dl,
 .work-description03 dl {
   width: 100%;
   position: relative;
 }
 .work-description01 dl dt img,
-.work-description02 dl dt img,
 .work-description03 dl dt img {
   width: 60%;
   height: 500px;
@@ -418,7 +416,6 @@ footer .content-wrapper ul li {
      object-fit: cover;
 }
 .work-description01 dl dd,
-.work-description02 dl dd,
 .work-description03 dl dd {
   width: 40%;
   position: absolute;
@@ -432,16 +429,30 @@ footer .content-wrapper ul li {
           box-shadow: 0px 3px 10px 5px #acacac;
 }
 
-.work-description02 dt {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+.work-description02 {
+  margin-bottom: 240px;
 }
-.work-description02 dd {
-  right: 10%;
+.work-description02 dl {
+  width: 100%;
+  position: relative;
+}
+.work-description02 dl dt img {
+  width: 60%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.work-description02 dl dd {
+  width: 40%;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+  background-color: #fff;
+  color: #333;
+  padding: 80px;
+  z-index: 2;
+  -webkit-box-shadow: 0px 3px 10px 5px #acacac;
+          box-shadow: 0px 3px 10px 5px #acacac;
 }
 
 /* 採用情報ページ */
@@ -636,6 +647,10 @@ footer .content-wrapper ul li {
     margin: 20px 0;
     font-size: 20px;
   }
+  .main-visual::before {
+    height: 500px;
+    top: -35%;
+  }
   .main-visual {
     height: 300px;
   }
@@ -645,10 +660,6 @@ footer .content-wrapper ul li {
   .main-visual h2 {
     left: 10%;
     font-size: 2rem;
-  }
-  .main-visual .bg1 {
-    height: 500px;
-    top: -35%;
   }
   .greeting h2 {
     margin-bottom: 10px;
@@ -685,12 +696,12 @@ footer .content-wrapper ul li {
   .news p {
     font-size: 90%;
   }
-  .recruit-img img {
-    height: 250px;
-  }
-  .bg2 {
+  .recruit::before {
     height: 350px;
     top: -25%;
+  }
+  .recruit-img img {
+    height: 250px;
   }
   footer .content-wrapper {
     -ms-flex-pack: distribute;
@@ -710,6 +721,46 @@ footer .content-wrapper ul li {
     font-size: 12px;
     padding-top: 10px;
     margin-left: 0;
+  }
+  .work-description01 dl dt img,
+.work-description03 dl dt img {
+    height: 300px;
+  }
+  .work-description01 dl dd,
+.work-description03 dl dd {
+    padding: 10px;
+    top: 10%;
+    left: 50%;
+  }
+  .work-description01 dl dd h2,
+.work-description03 dl dd h2 {
+    font-size: 16px;
+  }
+  .work-description01 dl dd p,
+.work-description03 dl dd p {
+    font-size: 12px;
+  }
+  .work-description02 dl dt {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .work-description02 dl dt img {
+    height: 300px;
+  }
+  .work-description02 dl dd {
+    padding: 10px;
+    top: 10%;
+    right: 50%;
+  }
+  .work-description02 dl dd h2 {
+    font-size: 16px;
+  }
+  .work-description02 dl dd p {
+    font-size: 12px;
   }
 }
 @media screen and (max-width: 1160px) {
