@@ -98,14 +98,59 @@ section {
 }
 
 /* サブ ベース */
-.sub-visual {
+.sub-visual-company {
   margin-bottom: 50px;
-  background-image: url(../images/1000x500-1.png);
+  background-image: url(../images/sv-company.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
-.sub-visual h1 {
+.sub-visual-company h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 200px;
+  font-weight: normal;
+}
+
+.sub-visual-work {
+  margin-bottom: 50px;
+  background-image: url(../images/sv-work.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.sub-visual-work h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 200px;
+  font-weight: normal;
+}
+
+.sub-visual-recruit {
+  margin-bottom: 50px;
+  background-image: url(../images/sv-recruit.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.sub-visual-recruit h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 200px;
+  font-weight: normal;
+}
+
+.sub-visual-contact {
+  margin-bottom: 50px;
+  background-image: url(../images/sv-contact.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.sub-visual-contact h1 {
   text-align: center;
   font-size: 1.5rem;
   color: #fff;
@@ -359,8 +404,11 @@ footer .content-wrapper ul li {
   display: flex;
   margin-bottom: 50px;
 }
+.company-greeting .left {
+  width: 50%;
+}
 .company-greeting .right {
-  width: 70%;
+  width: 40%;
   padding-top: 50px;
   margin: 20px;
 }
@@ -435,6 +483,14 @@ footer .content-wrapper ul li {
 .work-description02 dl {
   width: 100%;
   position: relative;
+}
+.work-description02 dl dt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .work-description02 dl dt img {
   width: 60%;
@@ -583,7 +639,16 @@ footer .content-wrapper ul li {
   transition: 0.3s ease all;
 }
 @media screen and (max-width: 950px) {
-  .sub-visual h1 {
+  .sub-visual-company h1 {
+    line-height: 100px;
+  }
+  .sub-visual-work h1 {
+    line-height: 100px;
+  }
+  .sub-visual-recruit h1 {
+    line-height: 100px;
+  }
+  .sub-visual-contact h1 {
     line-height: 100px;
   }
   .hamburger {
@@ -713,14 +778,21 @@ footer .content-wrapper ul li {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .company-greeting {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
   .company-greeting .left figure {
-    margin: 10px;
-    width: 90%;
+    margin: 0 auto;
+    width: 100%;
   }
   .company-greeting .right {
-    font-size: 12px;
-    padding-top: 10px;
-    margin-left: 0;
+    margin: 0;
   }
   .work-description01 dl dt img,
 .work-description03 dl dt img {
@@ -739,14 +811,6 @@ footer .content-wrapper ul li {
   .work-description01 dl dd p,
 .work-description03 dl dd p {
     font-size: 12px;
-  }
-  .work-description02 dl dt {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
   }
   .work-description02 dl dt img {
     height: 300px;

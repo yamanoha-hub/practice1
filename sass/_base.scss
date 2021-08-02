@@ -23,21 +23,25 @@ section {
 }
 
 /* サブ ベース */
-.sub-visual {
-  margin-bottom: 50px;
-  background-image: url(../images/1000x500-1.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+$nameList:company, work, recruit, contact;
+@each $name in $nameList {
 
-  h1 {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #fff;
-    line-height: 200px;
-    font-weight: normal;
-    @media screen and (max-width: 950px) {
-      line-height: 100px;
+  .sub-visual-#{$name} {
+    margin-bottom: 50px;
+    background-image: url(../images/sv-#{$name}.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #fff;
+      line-height: 200px;
+      font-weight: normal;
+      @media screen and (max-width: 950px) {
+        line-height: 100px;
+      }
     }
   }
 }

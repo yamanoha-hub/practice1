@@ -243,27 +243,36 @@ footer .content-wrapper {
 
 
 /* 会社概要ページ */
+// .sub-visual-company {
+  // background-image: url(../images/sv-company.jpg);
+// }
 .company-greeting {
   display: flex;
   margin-bottom: 50px;
+
+  .left {
+    width: 50%;
+  }
   
   .right {
-    width: 70%;
+    width: 40%;
     padding-top: 50px;
     margin: 20px; 
     h2 {
       text-align: center;
     }
   }
+
   @media screen and (max-width: 950px) {
+    flex-direction: column;
+    align-items: center;
+
     .left figure {
-      margin: 10px;
-      width: 90%;
+      margin: 0 auto;
+      width: 100%;
     }
     .right {
-      font-size: 12px;
-      padding-top: 10px;
-      margin-left: 0;
+      margin: 0;
     }
   }
 }
@@ -283,7 +292,6 @@ footer .content-wrapper {
 
 // 事業内容
 .work-description01,
-// .work-description02,
 .work-description03 {
   margin-bottom: 240px;
   dl {
@@ -328,10 +336,14 @@ footer .content-wrapper {
   dl {
     width: 100%;
     position: relative;
-    dt img {
-      width: 60%;
-      height: 500px;
-      object-fit: cover;
+    dt {
+      display: flex;
+      justify-content: flex-end;
+      img {
+        width: 60%;
+        height: 500px;
+        object-fit: cover;
+      }
     }
     dd {
       width: 40%;
@@ -345,13 +357,9 @@ footer .content-wrapper {
       box-shadow: 0px 3px 10px 5px rgb(172, 172, 172);
     }
     @media screen and (max-width: 950px) {
-      dt {
-        display: flex;
-        justify-content: flex-end;
-        img {
-          height: 300px;
-        }
-      } 
+      dt img {
+        height: 300px;
+      }
       dd {
         padding: 10px;
         top: 10%;
