@@ -27,6 +27,7 @@ $nameList:company, work, recruit, contact;
 @each $name in $nameList {
 
   .sub-visual-#{$name} {
+    margin-top: 100px;
     margin-bottom: 50px;
     background-image: url(../images/sv-#{$name}.jpg);
     background-repeat: no-repeat;

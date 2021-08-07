@@ -4,11 +4,19 @@
 @import "_parts";  //パーツ
 @import "_mixin";  //mixin定義
 
+
 /* ヘッダー */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 100px
+}
 .header-nav {
   @include flex;
   height: 100px;
-  margin: 0 50px;
+  padding: 0 50px;
 }
 
 .header nav ul {
@@ -21,15 +29,12 @@
   .hover-menu {
     display: none;
     position: fixed;
-    top: 0;
+    top: 100px;
     right: 0;
     width: 30%;
     height: 60%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 5;
-  }
-  .header-nav nav {
-    display: none;
   }
   .header-nav nav ul {
     flex-direction: column;
@@ -45,6 +50,7 @@
   position: relative;
   height: 600px;
   @include main-visual-bg;
+  margin-top: 100px;
 
   img {
     width: 70%;
@@ -273,6 +279,7 @@ footer .content-wrapper {
     }
     .right {
       margin: 0;
+      width: 350px;
     }
   }
 }

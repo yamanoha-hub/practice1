@@ -99,6 +99,7 @@ section {
 
 /* サブ ベース */
 .sub-visual-company {
+  margin-top: 100px;
   margin-bottom: 50px;
   background-image: url(../images/sv-company.jpg);
   background-repeat: no-repeat;
@@ -114,6 +115,7 @@ section {
 }
 
 .sub-visual-work {
+  margin-top: 100px;
   margin-bottom: 50px;
   background-image: url(../images/sv-work.jpg);
   background-repeat: no-repeat;
@@ -129,6 +131,7 @@ section {
 }
 
 .sub-visual-recruit {
+  margin-top: 100px;
   margin-bottom: 50px;
   background-image: url(../images/sv-recruit.jpg);
   background-repeat: no-repeat;
@@ -144,6 +147,7 @@ section {
 }
 
 .sub-visual-contact {
+  margin-top: 100px;
   margin-bottom: 50px;
   background-image: url(../images/sv-contact.jpg);
   background-repeat: no-repeat;
@@ -173,6 +177,14 @@ section {
   line-height: 50px;
 }
 /* ヘッダー */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  height: 100px;
+}
+
 .header-nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,7 +196,7 @@ section {
       -ms-flex-align: center;
           align-items: center;
   height: 100px;
-  margin: 0 50px;
+  padding: 0 50px;
 }
 
 .header nav ul {
@@ -205,6 +217,7 @@ section {
 .main-visual {
   position: relative;
   height: 600px;
+  margin-top: 100px;
 }
 .main-visual::before {
   content: "";
@@ -690,16 +703,12 @@ footer .content-wrapper ul li {
   .hover-menu {
     display: none;
     position: fixed;
-    top: 0;
+    top: 100px;
     right: 0;
     width: 30%;
     height: 60%;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 5;
-  }
-
-  .header-nav nav {
-    display: none;
   }
 
   .header-nav nav ul {
@@ -793,6 +802,7 @@ footer .content-wrapper ul li {
   }
   .company-greeting .right {
     margin: 0;
+    width: 350px;
   }
   .work-description01 dl dt img,
 .work-description03 dl dt img {
