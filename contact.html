@@ -9,6 +9,8 @@
   <!-- Font Awesame -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <!-- jquery -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <!-- グーグルマップ -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
@@ -22,7 +24,7 @@
           <span></span>
         </a>
       </div>
-      <nav>
+      <nav class="hover-menu">
         <ul>
           <li><a href="index.html">トップページ</a></li>
           <li><a href="company.html">会社概要</a></li>
@@ -45,13 +47,17 @@
         <dl class="name">
           <dt>氏名</dt>
           <dd>
-            <span>姓</span><input type="text">
-            <span>名</span><input type="text">
+            <p class="alert">未入力です</p>
+            <span>姓</span>
+            <input type="text" id="text" name="text">
+            <span>名</span>
+            <input type="text">
           </dd>
         </dl>
         <dl class="furigana">
           <dt>フリガナ</dt>
           <dd>
+            <p class="alert">未入力です</p>
             <span>セイ</span><input type="text">
             <span>メイ</span><input type="text">
           </dd>
@@ -59,26 +65,36 @@
         <dl class="mail">
           <dt>メールアドレス</dt>
           <dd>
+            <p class="alert">未入力です</p>
             <input type="text">
           </dd>
         </dl>
         <dl class="tel">
           <dt>電話番号</dt>
           <dd>
-            <input type="text"><span>-</span><input type="text"><span>-</span><input type="text">
+            <p class="alert">未入力です</p>
+            <input type="text">
+            <span>-</span>
+            <input type="text">
+            <span>-</span>
+            <input type="text">
           </dd>
         </dl>
         <dl class="zip">
           <dt>郵便番号</dt>
           <dd>
-            <input type="text"><span>-</span><input type="text">
+            <p class="alert">未入力です</p>
+            <input type="text">
+            <span>-</span>
+            <input type="text">
           </dd>
         </dl>
         <dl class="pref">
           <dt>都道府県</dt>
           <dd>
+            <p class="alert">未入力です</p>
             <select>
-              <option value="" selected="">都道府県</option>
+              <option value="" selected=""></option>
               <option value="北海道">北海道</option>
               <option value="青森県">青森県</option>
               <option value="岩手県">岩手県</option>
@@ -132,17 +148,19 @@
         <dl class="address">
           <dt>住所</dt>
           <dd>
+            <p class="alert">未入力です</p>
             <input type="text">
           </dd>
         </dl>
         <dl class="multi-text">
           <dt>お問い合わせ内容</dt>
-          <dd>
-            <textarea></textarea>
+          <dd >
+            <p class="alert">未入力です</p>
+            <textarea id="textarea" name="textarea"></textarea>
           </dd>
         </dl>
         <section class="form-button">
-          <input type="button" value="送信する">
+          <input type="button" value="送信する" id="submitBtn">
         </section>
       </form>
     </article>
@@ -168,6 +186,6 @@
       <p>&copy; XXCo., Ltd. All Reserved.</p>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
