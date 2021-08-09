@@ -63,7 +63,7 @@ $(function() {
 
 
     // 都道府県
-    if($("option").val() == "") {
+    if($("select").val() == "none") {
       $(".pref").children("dd").children(".alert").show();
       sendFlag = false;
     } else {
